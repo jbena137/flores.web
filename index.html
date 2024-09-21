@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Para asegurar que se adapta bien al ancho de la pantalla -->
     <style>
-        .back {
-
-            position: fixed;
-            padding: 0;
+        body {
             margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .back {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -16,19 +20,17 @@
             animation-name: backdiv;
             animation-duration: 3500ms;
             animation-iteration-count: infinite;
-            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .heart {
-            position: absolute;
-            margin: auto;
-            top: 170px;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #ff4d4d; /* Cambiado a un rojo con un toque rosado */
-            height: 150px;
-            width: 150px;
+            position: relative;
+            background-color: #ff4d4d;
+            height: 100px; /* Ajuste de tamaño para móviles */
+            width: 100px; /* Ajuste de tamaño para móviles */
             transform: rotate(-45deg);
             animation-name: beat;
             animation-duration: 3500ms;
@@ -36,25 +38,49 @@
         }
 
         .heart:after {
-            background-color: #ff4d4d; /* Cambiado a un rojo con un toque rosado */
+            background-color: #ff4d4d;
             content: "";
             border-radius: 50%;
             position: absolute;
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             top: 0;
-            left: 80px;
+            left: 50px;
         }
 
         .heart:before {
-            background-color: #ff4d4d; /* Cambiado a un rojo con un toque rosado */
+            background-color: #ff4d4d;
             content: "";
             border-radius: 50%;
             position: absolute;
-            width: 150px;
-            height: 150px;
-            top: -80px;
+            width: 100px;
+            height: 100px;
+            top: -50px;
             left: 0;
+        }
+
+        .bday {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #0e2804;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            background-color: rgb(247, 247, 247);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button a {
+            color: black;
+            text-decoration: none;
         }
 
         @keyframes backdiv {
@@ -71,64 +97,47 @@
             50% {
                 transform: scale(0.6) rotate(-45deg);
             }
-        } 
-
-        .bday {
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            font-size: 15px;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-            color: #0e2804;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #ffffff;
         }
 
-        button {
-            background-color: rgb(247, 247, 247);
-            display: block; 
-            margin: 20px auto; 
-            padding: 10px 20px; 
-            color: white; 
-            border: none;
-            margin-top: 70vh;
-             
-        }
-        a{
-            color: black;
-            font-weight: 20px;
-            text-decoration: none;
-        }
+        @media (max-width: 600px) {
+            .bday {
+                font-size: 1.2rem;
+                padding: 5px;
+            }
 
-        .elements {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-           
+            .heart {
+                height: 80px;
+                width: 80px;
+            }
+
+            .heart:after {
+                width: 80px;
+                height: 80px;
+                left: 40px;
+            }
+
+            .heart:before {
+                width: 80px;
+                height: 80px;
+                top: -40px;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
         }
     </style>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <title>Flores Amarillas</title>
 </head>
 <body>
     <div class="back">
         <div class="bday">Algún día te daré todas las flores del mundo.<br> </div>
-        
-        <div class="elements">
-            <div class="heart"></div>
-            <footer>
-                <div class="boton">
-                    <button><a href="index2.html"><span>Has click aquí</span></a></button>
-                </div>
-            </footer>
-        </div>
-       
+        <div class="heart"></div>
+        <footer>
+            <button><a href="index2.html">Has click aquí</a></button>
+        </footer>
     </div>
-    
 </body>
 </html>
